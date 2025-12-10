@@ -8,9 +8,8 @@
   <style>
     :root {
       --bg:#1e1e1e;
-      --muted:#9aa1a6;
+      --muted:#b5bcc3;
       --border:rgba(255,255,255,0.12);
-      --accent:#8e6cff;
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
     }
 
@@ -20,15 +19,15 @@
       color:#eee;
     }
 
-    /* HEADER ------------------------------- */
+    /* HEADER */
     header {
-      height:58px;
+      height:60px;
       display:flex;
       align-items:center;
-      padding:0 26px;
-      gap:18px;
-      border-bottom:1px solid var(--border);
+      padding:0 28px;
+      gap:20px;
       background:#1f1f1f;
+      border-bottom:1px solid var(--border);
     }
 
     .ms-logo {
@@ -38,12 +37,9 @@
 
     .learn-text {
       font-size:22px;
-      color:#fff;
       font-weight:500;
-      margin-right:20px;
-      display:flex;
-      align-items:center;
-      gap:10px;
+      color:#fff;
+      margin-right:24px;
     }
 
     nav.top {
@@ -57,36 +53,35 @@
       text-decoration:none;
     }
 
-    /* MAIN PANEL --------------------------- */
+    /* MAIN PANEL */
     .panel {
       width:100%;
-      margin:0;
       padding:40px;
     }
 
     h1 {
-      font-size:40px;
+      font-size:42px;
       font-weight:700;
-      margin-bottom:10px; /* spacing requested */
+      margin-bottom:16px;
     }
 
     .issued {
+      font-size:18px;
       color:var(--muted);
-      margin-bottom:26px;
-      font-size:17px;
-    }
-
-    /* PROFILE ------------------------------ */
-    .profile-row {
-      display:flex;
-      align-items:center;
-      gap:20px;
       margin-bottom:28px;
     }
 
+    /* PROFILE */
+    .profile-row {
+      display:flex;
+      align-items:center;
+      gap:22px;
+      margin-bottom:30px;
+    }
+
     .circle-avatar {
-      width:75px;
-      height:75px;
+      width:80px;
+      height:80px;
       border-radius:50%;
       overflow:hidden;
     }
@@ -98,7 +93,7 @@
     }
 
     .profile-name {
-      font-size:22px;
+      font-size:24px;
       font-weight:600;
       color:#b39aff;
       text-decoration:none;
@@ -107,16 +102,15 @@
     hr {
       border:0;
       border-top:1px solid var(--border);
-      margin:26px 0;
+      margin:30px 0;
     }
 
-    /* GRID -------------------------------- */
+    /* GRID */
     .grid {
       display:grid;
       grid-template-columns: 2fr 1fr;
-      gap:30px;
+      gap:34px;
       width:100%;
-      align-items:flex-start;
     }
 
     .certificate-container img {
@@ -125,11 +119,11 @@
       object-fit:contain;
     }
 
-    /* SIDEBAR ----------------------------- */
+    /* SIDEBAR */
     .badge-img {
-      width:160px;
-      display:block;
-      margin-bottom:22px;
+      width:165px;
+      height:auto;
+      margin-bottom:24px;
     }
 
     .status-label {
@@ -144,7 +138,7 @@
       border-radius:999px;
       font-size:14px;
       margin-right:8px;
-      color:white; /* make text white */
+      color:#fff;
     }
 
     .status-pill { background:#2e6047; }
@@ -152,62 +146,61 @@
 
     .meta-list {
       margin-top:20px;
-      padding-top:14px;
+      padding-top:16px;
       border-top:1px solid var(--border);
-      font-size:15px;
+      font-size:16px;
     }
 
     .meta-list .row {
-      padding:12px 0;
+      padding:14px 0;
       border-bottom:1px solid rgba(255,255,255,0.08);
       color:var(--muted);
     }
 
     a.view {
       display:inline-block;
-      margin-top:18px;
+      margin-top:20px;
       color:#b39aff;
       text-decoration:none;
-      font-size:15px;
+      font-size:16px;
     }
 
-    /* SKILLS SECTION ---------------------- */
+    /* SKILLS SECTION */
     .skills {
       margin-top:60px;
-      padding:0 5px;
     }
 
     .skills h2 {
-      font-size:26px;
-      margin-bottom:10px;
+      font-size:28px;
+      margin-bottom:12px;
     }
 
     .skills ul {
       list-style:none;
-      padding-left:0;
-      font-size:17px;
-      line-height:1.6;
+      padding:0;
+      font-size:18px;
+      line-height:1.7;
     }
 
-    /* FOOTER ------------------------------- */
+    /* FOOTER */
     footer {
-      margin-top:70px;
+      margin-top:80px;
       background:#0d1d2c;
       padding:40px;
       color:#d0d9e4;
-      font-size:14px;
+      font-size:16px; /* slightly bigger */
+    }
+
+    .footer-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:26px;
+      margin-bottom:18px;
     }
 
     footer a {
       color:#d0d9e4;
       text-decoration:none;
-    }
-
-    .footer-links {
-      display:flex;
-      gap:24px;
-      flex-wrap:wrap;
-      margin-top:14px;
     }
   </style>
 </head>
@@ -247,10 +240,12 @@
 
   <div class="grid">
 
+    <!-- CERTIFICATE -->
     <div class="certificate-container">
       <img src="webimage.png" alt="Certificate">
     </div>
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
 
       <img class="badge-img" src="Imageweb.png" alt="Certification Badge">
@@ -270,12 +265,10 @@
       <a class="view" href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification">
         View certification page
       </a>
-
     </aside>
-
   </div>
 
-  <!-- SKILLS MEASURED SECTION -->
+  <!-- SKILLS -->
   <div class="skills">
     <h2>Skills measured:</h2>
     <ul>
@@ -290,20 +283,40 @@
 
 <!-- FOOTER -->
 <footer>
-  <div>English (United States)</div>
 
   <div class="footer-links">
     <a href="#">Manage cookies</a>
-    <a href="#">AI Disclaimer</a>
-    <a href="#">Previous Versions</a>
-    <a href="#">Blog</a>
-    <a href="#">Contribute</a>
-    <a href="#">Privacy</a>
-    <a href="#">Terms of Use</a>
-    <a href="#">Trademarks</a>
+
+    <a href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content">
+      AI Disclaimer
+    </a>
+
+    <a href="https://learn.microsoft.com/en-us/previous-versions/">
+      Previous Versions
+    </a>
+
+    <a href="https://techcommunity.microsoft.com/category/skills-hub/blog/skills-hub-blog">
+      Blog
+    </a>
+
+    <a href="https://learn.microsoft.com/en-us/contribute/">
+      Contribute
+    </a>
+
+    <a href="https://www.microsoft.com/en-us/privacy/privacystatement">
+      Privacy
+    </a>
+
+    <a href="https://learn.microsoft.com/en-us/legal/termsofuse">
+      Terms of Use
+    </a>
+
+    <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks">
+      Trademarks
+    </a>
   </div>
 
-  <div style="margin-top:10px;">© Microsoft 2025</div>
+  <div>© Microsoft 2025</div>
 </footer>
 
 </body>

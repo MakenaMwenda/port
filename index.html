@@ -4,67 +4,60 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mockup Landing</title>
+
   <style>
     :root{
       --bg:#1e1e1e;
-      --panel:#262626;
       --muted:#9aa1a6;
-      --accent:#0ea5a3;
-      --card:#151515;
       --border:rgba(255,255,255,0.06);
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
-    html,body{height:100%;margin:0;background:var(--bg);color:#eee}
-    header{
-      height:56px;display:flex;align-items:center;gap:18px;padding:0 22px;border-bottom:1px solid var(--border);background:linear-gradient(#161616,#191919);
-    }
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:36px;height:36px;border-radius:4px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav.top{display:flex;gap:18px;color:var(--muted);font-size:14px}
-    .content{display:flex;gap:28px;padding:22px;max-width:1200px;margin:18px auto}
-    main{flex:1}
-    .card{background:transparent;border:1px solid transparent;padding:18px}
 
-    /* HERO: keep original proportions, no cropping */
-    .hero {
-      height:700px;
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      color:#eee;
+    }
+
+    header{
+      height:56px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:0 22px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(#161616,#191919);
+    }
+
+    .logo{
+      width:36px;
+      height:36px;
+      border-radius:4px;
       background:#fff;
+      color:#111;
       display:flex;
       align-items:center;
       justify-content:center;
-    }
-    .hero img {
-      max-height:100%;
-      max-width:100%;
-      width:auto;
-      height:auto;
-      object-fit:contain; /* show whole image, no crop */
-      display:block;
+      font-weight:700;
     }
 
-    .left-meta{margin-top:28px;padding:18px 0}
-    .left-meta h3{margin:0 0 8px 0}
-    .left-meta p{margin:6px 0;color:var(--muted)}
+    nav.top{
+      display:flex;
+      gap:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
 
-    aside.sidebar{width:280px;padding:18px;border-left:1px solid var(--border)}
-    .avatar-square{width:120px;height:120px;background:#fff;color:#111;display:flex;align-items:center;justify-content:center;font-weight:700;margin:6px 0}
-    .status{display:flex;align-items:center;gap:10px;margin:8px 0}
-    .badge{padding:6px 10px;border-radius:999px;font-size:13px;background:#274e3b;color:#bff3d9;border:1px solid rgba(255,255,255,0.03)}
-    .verif{padding:6px 10px;border-radius:999px;font-size:13px;background:#153a5a;color:#cfe8ff}
-    .meta-list{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
-    .meta-list .row{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)}
-    a.view{display:inline-block;margin-top:12px;color:#8ea0ff;text-decoration:none;font-size:14px}
+    .panel{
+      max-width:1200px;
+      margin:0 auto;
+    }
 
-    .panel{max-width:1200px;margin:0 auto;background:transparent;padding-bottom:28px}
-
-    footer{height:80px;background:#08232b;margin-top:36px;border-top:1px solid rgba(255,255,255,0.02);display:flex;align-items:center}
-    .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:16px}
-    .footer-inner .nav{display:flex;gap:36px;color:#bfcfd6;font-size:14px}
-
-    /* circular avatar using circle.png */
+    /* BIGGER circular avatar */
     .circle-avatar{
-      width:54px;
-      height:54px;
+      width:90px;
+      height:90px;
       border-radius:50%;
       overflow:hidden;
       margin:20px;
@@ -72,29 +65,98 @@
     .circle-avatar img{
       width:100%;
       height:100%;
-      border-radius:50%;
       object-fit:cover;
+      border-radius:50%;
       display:block;
     }
 
-    /* responsive tweaks */
-    @media (max-width:980px){
-      .content{flex-direction:column;padding:12px}
+    /* HERO full-width banner, no borders, allowed to overflow */
+    .hero {
+      width:100vw;              /* full viewport width */
+      margin-left: calc(-50vw + 50%);  /* lets it spill over panel */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#000;
+      margin-bottom:20px;
+    }
+    .hero img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;       /* show full image, no cropping */
+    }
+
+    .content{
+      display:flex;
+      gap:28px;
+      padding:22px;
+      max-width:1200px;
+      margin:18px auto;
+    }
+
+    main{flex:1}
+
+    .left-meta{
+      margin-top:28px;
+      padding:18px 0;
+    }
+    .left-meta p{color:var(--muted)}
+
+    aside.sidebar{
+      width:280px;
+      padding:18px;
+      border-left:1px solid var(--border);
+    }
+
+    .avatar-square{
+      width:120px;height:120px;
+      background:#fff;color:#111;
+      display:flex;align-items:center;justify-content:center;font-weight:700;
+      margin:6px 0;
+    }
+
+    .status{display:flex;align-items:center;gap:10px;margin:8px 0}
+    .badge{
+      padding:6px 10px;border-radius:999px;font-size:13px;
+      background:#274e3b;color:#bff3d9;
+    }
+    .verif{
+      padding:6px 10px;border-radius:999px;font-size:13px;
+      background:#153a5a;color:#cfe8ff;
+    }
+
+    .meta-list{
+      margin-top:14px;
+      border-top:1px solid var(--border);
+      padding-top:12px;
+    }
+    .meta-list .row{
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,0.02);
+      color:var(--muted);
+    }
+
+    a.view{color:#8ea0ff;text-decoration:none;margin-top:12px;display:inline-block}
+
+    /* responsive */
+    @media(max-width:980px){
+      .content{flex-direction:column}
       aside.sidebar{width:100%;order:2}
       main{order:1}
-      .hero{height:300px}
-      .footer-inner{flex-wrap:wrap}
+      .hero img{max-height:300px}
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="brand"><div class="logo">IMAGE</div></div>
+    <div class="logo">IMAGE</div>
     <nav class="top">
       <div>Learn</div>
       <div>Documentation</div>
       <div>Training</div>
-      <div>Q&amp;A</div>
+      <div>Q&A</div>
       <div>Topics</div>
     </nav>
     <div style="margin-left:auto;color:var(--muted);font-weight:600">MM</div>
@@ -107,14 +169,13 @@
       </div>
     </div>
 
+    <!-- HERO IMAGE → FULL WIDTH, NO BORDERS -->
+    <div class="hero">
+      <img src="webimage.png" alt="Hero Image">
+    </div>
+
     <div class="content">
       <main>
-        <div class="card">
-          <div class="hero">
-            <img src="webimage.png" alt="Hero Image">
-          </div>
-        </div>
-
         <div class="left-meta">
           <h3>Text</h3>
           <p>Text</p>
@@ -125,6 +186,7 @@
 
       <aside class="sidebar">
         <div class="avatar-square">IMAGE</div>
+
         <div class="status">
           <div style="font-weight:700;color:var(--muted)">Status</div>
           <div class="badge">Active</div>
@@ -142,20 +204,5 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="nav">
-        <div>Text</div>
-        <div>Text</div>
-        <div>Text</div>
-        <div>Text</div>
-        <div>Text</div>
-        <div>Text</div>
-        <div>Text</div>
-        <div>Text</div>
-        <div>Text</div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>

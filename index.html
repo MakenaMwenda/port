@@ -6,21 +6,20 @@
   <title>Mockup Landing</title>
 
   <style>
-    :root{
+    :root {
       --bg:#1e1e1e;
       --muted:#9aa1a6;
       --border:rgba(255,255,255,0.06);
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
 
-    html,body{
-      height:100%;
+    body {
       margin:0;
       background:var(--bg);
       color:#eee;
     }
 
-    header{
+    header {
       height:56px;
       display:flex;
       align-items:center;
@@ -30,7 +29,7 @@
       background:linear-gradient(#161616,#191919);
     }
 
-    .logo{
+    .logo {
       width:36px;
       height:36px;
       border-radius:4px;
@@ -42,27 +41,28 @@
       font-weight:700;
     }
 
-    nav.top{
+    nav.top {
       display:flex;
       gap:18px;
       color:var(--muted);
       font-size:14px;
     }
 
-    .panel{
+    /* Panel wrapper */
+    .panel {
       max-width:1200px;
       margin:0 auto;
     }
 
-    /* BIGGER circular avatar */
-    .circle-avatar{
+    /* CIRCLE AVATAR */
+    .circle-avatar {
       width:90px;
       height:90px;
       border-radius:50%;
       overflow:hidden;
-      margin:20px;
+      margin:20px 0 0 20px;
     }
-    .circle-avatar img{
+    .circle-avatar img {
       width:100%;
       height:100%;
       object-fit:cover;
@@ -70,81 +70,112 @@
       display:block;
     }
 
-    /* HERO full-width banner, no borders, allowed to overflow */
+    /* HERO AREA — MATCH MOCKUP */
     .hero {
-      width:100vw;              /* full viewport width */
-      margin-left: calc(-50vw + 50%);  /* lets it spill over panel */
+      width:100%;
+      padding:60px 0 40px 0;  /* spacing to match screenshot */
       display:flex;
       justify-content:center;
       align-items:center;
-      background:#000;
-      margin-bottom:20px;
+      background:transparent;
     }
-    .hero img{
-      width:100%;
+    .hero img {
+      width:auto;
+      max-width:900px; /* IMPORTANT — adjust if needed */
       height:auto;
+      object-fit:contain;
       display:block;
-      object-fit:contain;       /* show full image, no cropping */
     }
 
-    .content{
+    /* Main content layout */
+    .content {
       display:flex;
       gap:28px;
       padding:22px;
       max-width:1200px;
-      margin:18px auto;
+      margin:0 auto;
     }
 
-    main{flex:1}
+    main { flex:1; }
 
-    .left-meta{
-      margin-top:28px;
-      padding:18px 0;
+    .left-meta {
+      margin-top:18px;
     }
-    .left-meta p{color:var(--muted)}
+    .left-meta p {
+      color:var(--muted);
+      margin:6px 0;
+    }
 
-    aside.sidebar{
+    /* SIDEBAR */
+    aside.sidebar {
       width:280px;
       padding:18px;
       border-left:1px solid var(--border);
     }
 
-    .avatar-square{
-      width:120px;height:120px;
-      background:#fff;color:#111;
-      display:flex;align-items:center;justify-content:center;font-weight:700;
-      margin:6px 0;
+    .avatar-square {
+      width:120px;
+      height:120px;
+      background:#fff;
+      color:#111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      margin-bottom:12px;
     }
 
-    .status{display:flex;align-items:center;gap:10px;margin:8px 0}
-    .badge{
-      padding:6px 10px;border-radius:999px;font-size:13px;
-      background:#274e3b;color:#bff3d9;
+    .status { display:flex; align-items:center; gap:10px; margin:8px 0; }
+    .badge {
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      background:#274e3b;
+      color:#bff3d9;
     }
-    .verif{
-      padding:6px 10px;border-radius:999px;font-size:13px;
-      background:#153a5a;color:#cfe8ff;
+    .verif {
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      background:#153a5a;
+      color:#cfe8ff;
     }
 
-    .meta-list{
+    .meta-list {
       margin-top:14px;
       border-top:1px solid var(--border);
       padding-top:12px;
     }
-    .meta-list .row{
+    .meta-list .row {
       padding:10px 0;
       border-bottom:1px solid rgba(255,255,255,0.02);
       color:var(--muted);
     }
 
-    a.view{color:#8ea0ff;text-decoration:none;margin-top:12px;display:inline-block}
+    a.view {
+      color:#8ea0ff;
+      text-decoration:none;
+      margin-top:12px;
+      display:inline-block;
+    }
 
-    /* responsive */
-    @media(max-width:980px){
-      .content{flex-direction:column}
-      aside.sidebar{width:100%;order:2}
-      main{order:1}
-      .hero img{max-height:300px}
+    footer {
+      height:80px;
+      background:#08232b;
+      margin-top:36px;
+      border-top:1px solid rgba(255,255,255,0.02);
+      display:flex;
+      align-items:center;
+      color:#bfcfd6;
+    }
+
+    .footer-inner {
+      max-width:1200px;
+      margin:0 auto;
+      padding:16px;
+      display:flex;
+      gap:36px;
+      font-size:14px;
     }
   </style>
 </head>
@@ -163,18 +194,19 @@
   </header>
 
   <div class="panel">
-    <div style="display:flex;align-items:flex-start;gap:12px;max-width:1200px;margin:12px auto">
-      <div class="circle-avatar">
-        <img src="circle.png" alt="Profile circle">
-      </div>
+
+    <!-- Avatar -->
+    <div class="circle-avatar">
+      <img src="circle.png" alt="Profile">
     </div>
 
-    <!-- HERO IMAGE → FULL WIDTH, NO BORDERS -->
+    <!-- Certificate Section -->
     <div class="hero">
-      <img src="webimage.png" alt="Hero Image">
+      <img src="webimage.png" alt="Certificate">
     </div>
 
     <div class="content">
+
       <main>
         <div class="left-meta">
           <h3>Text</h3>
@@ -201,8 +233,23 @@
           <a class="view" href="#">View certification page</a>
         </div>
       </aside>
+
     </div>
   </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>Text</div>
+      <div>Text</div>
+      <div>Text</div>
+      <div>Text</div>
+      <div>Text</div>
+      <div>Text</div>
+      <div>Text</div>
+      <div>Text</div>
+      <div>Text</div>
+    </div>
+  </footer>
 
 </body>
 </html>

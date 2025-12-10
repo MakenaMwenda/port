@@ -77,13 +77,13 @@
     .profile-row {
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:18px;
       margin-bottom:24px;
     }
 
     .circle-avatar {
-      width:50px;
-      height:50px;
+      width:65px;
+      height:65px;
       border-radius:50%;
       overflow:hidden;
     }
@@ -96,7 +96,7 @@
     }
 
     .profile-name {
-      font-size:17px;
+      font-size:20px;
       font-weight:600;
       color:#8ebaff;
       cursor:pointer;
@@ -118,7 +118,7 @@
       align-items:flex-start;
     }
 
-    /* LEFT SIDE CONTENT (certificate image + details) */
+    /* LEFT SIDE CONTENT */
     .certificate-container {
       display:flex;
       justify-content:center;
@@ -138,22 +138,23 @@
     }
 
     .badge-img {
-      width:120px;
+      width:150px;
       height:auto;
       display:block;
-      margin-bottom:14px;
+      margin-bottom:20px;
     }
 
     .status-label {
       font-weight:700;
       color:var(--muted);
       margin-top:10px;
+      margin-bottom:10px; /* space added */
     }
 
     .status-pill {
       padding:6px 12px;
       background:#274e3b;
-      color:#bff3d9;
+      color:#ffffff;
       border-radius:999px;
       margin-right:6px;
       font-size:13px;
@@ -162,20 +163,20 @@
     .verif-pill {
       padding:6px 12px;
       background:#153a5a;
-      color:#cfe8ff;
+      color:#ffffff;
       border-radius:999px;
       font-size:13px;
     }
 
     .meta-list {
-      margin-top:14px;
+      margin-top:18px;
       border-top:1px solid var(--border);
       padding-top:12px;
       font-size:14px;
     }
 
     .meta-list .row {
-      padding:10px 0;
+      padding:12px 0;
       border-bottom:1px solid rgba(255,255,255,0.08);
       color:var(--muted);
     }
@@ -200,8 +201,6 @@
     <a href="https://learn.microsoft.com/en-us/answers/questions/ask/">Q&A</a>
     <a href="https://learn.microsoft.com/en-us/training/organizations">Topics</a>
   </nav>
-
-  <div style="margin-left:auto;color:var(--muted);font-weight:600">MM</div>
 </header>
 
 <div class="panel">
@@ -221,18 +220,17 @@
 
   <hr>
 
-  <!-- TWO COLUMN LAYOUT -->
   <div class="grid">
 
-    <!-- LEFT: CERTIFICATE -->
+    <!-- LEFT -->
     <div class="certificate-container">
       <img src="webimage.png" alt="Certificate Image">
     </div>
 
-    <!-- RIGHT: SIDEBAR -->
+    <!-- RIGHT SIDEBAR -->
     <aside class="sidebar">
 
-      <img class="badge-img" src="badge.png" alt="Badge">
+      <img class="badge-img" src="imageweb.png" alt="Badge">
 
       <div class="status-label">Status</div>
 
@@ -240,10 +238,10 @@
       <span class="verif-pill">Online Verifiable</span>
 
       <div class="meta-list">
-        <div class="row">Credential ID: 3390782DECEFB D9F</div>
-        <div class="row">Certification number: 6330P5-C5864C</div>
-        <div class="row">Earned on: November 29, 2025</div>
-        <div class="row">Expires on: November 29, 2026</div>
+        <div class="row">Credential ID: 33807839DECEFB D8F</div>
+        <div class="row">Certification number: 6380B4-C4592C</div>
+        <div class="row">Earned on: December 7, 2025</div>
+        <div class="row">Expires on: December 7, 2026</div>
       </div>
 
       <a class="view" href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification">

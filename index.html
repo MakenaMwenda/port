@@ -46,15 +46,19 @@
     nav.top {
       display:flex;
       gap:18px;
-      color:var(--muted);
       font-size:14px;
     }
 
-   .panel {
-  width:100%;
-  margin:0;
-  padding:20px;
-}
+    nav.top a {
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .panel {
+      width:100%;
+      margin:0;
+      padding:20px;
+    }
 
     /* PAGE TITLE */
     h1 {
@@ -96,6 +100,7 @@
       font-weight:600;
       color:#8ebaff;
       cursor:pointer;
+      text-decoration:none;
     }
 
     hr {
@@ -107,8 +112,9 @@
     /* MAIN TWO-COLUMN LAYOUT */
     .grid {
       display:grid;
-      grid-template-columns: 1fr 300px;
-      gap:32px;
+      width:100%;
+      grid-template-columns: 2fr 1fr;
+      gap:20px;
       align-items:flex-start;
     }
 
@@ -120,8 +126,7 @@
     }
 
     .certificate-container img {
-      width:auto;
-      max-width:900px;
+      width:100%;
       height:auto;
       display:block;
       object-fit:contain;
@@ -188,13 +193,14 @@
 
 <header>
   <div class="logo">IMAGE</div>
+
   <nav class="top">
-    <div>Learn</div>
-    <div>Documentation</div>
-    <div>Training</div>
-    <div>Q&A</div>
-    <div>Topics</div>
+    <a href="https://learn.microsoft.com/en-us/docs/">Documentation</a>
+    <a href="https://learn.microsoft.com/en-us/training/">Training</a>
+    <a href="https://learn.microsoft.com/en-us/answers/questions/ask/">Q&A</a>
+    <a href="https://learn.microsoft.com/en-us/training/organizations">Topics</a>
   </nav>
+
   <div style="margin-left:auto;color:var(--muted);font-weight:600">MM</div>
 </header>
 
@@ -208,7 +214,9 @@
     <div class="circle-avatar">
       <img src="circle.png" alt="Profile">
     </div>
-    <div class="profile-name">Makena Mwenda</div>
+    <a class="profile-name" href="https://learn.microsoft.com/en-us/users/makenamwenda-0181/">
+      Makena Mwenda
+    </a>
   </div>
 
   <hr>
@@ -232,13 +240,15 @@
       <span class="verif-pill">Online Verifiable</span>
 
       <div class="meta-list">
-        <div class="row">Text</div>
-        <div class="row">Text</div>
-        <div class="row">Text</div>
-        <div class="row">Text</div>
+        <div class="row">Credential ID: 3390782DECEFB D9F</div>
+        <div class="row">Certification number: 6330P5-C5864C</div>
+        <div class="row">Earned on: November 29, 2025</div>
+        <div class="row">Expires on: November 29, 2026</div>
       </div>
 
-      <a class="view" href="#">View certification page</a>
+      <a class="view" href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification">
+        View certification page
+      </a>
 
     </aside>
 

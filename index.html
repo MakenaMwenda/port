@@ -211,7 +211,36 @@
     /* --------------------------------------------------
        MOBILE RESPONSIVE RULES (FULLY FIXED)
     -------------------------------------------------- */
-    @media (max-width: 768px) {
+    @media (max-width: 768px) {@media (max-width: 768px) {
+
+  /* Force header to stay one line */
+  header {
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .learn-text {
+    font-size: 16px;
+    margin-right: 6px;
+  }
+
+  nav.top {
+    gap: 12px;
+    font-size: 13px;
+    white-space: nowrap;      /* prevent wrapping */
+    flex-shrink: 1;           /* allow nav to compress instead of wrapping */
+  }
+
+  nav.top a {
+    font-size: 13px;
+  }
+
+  /* Make logo slightly smaller to save space */
+  .ms-logo {
+    height: 22px;
+  }
+}
+
 
       .panel { padding: 20px; }
 

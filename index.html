@@ -1,99 +1,346 @@
-/* ---------------------------------------
-   MOBILE RESPONSIVE RULES
---------------------------------------- */
-@media (max-width: 768px) {
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certification Mockup</title>
 
-  /* PANEL */
-  .panel {
-    padding: 20px;
-  }
+  <style>
+    :root {
+      --bg:#1e1e1e;
+      --muted:#b5bcc3;
+      --border:rgba(255,255,255,0.12);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    }
 
-  h1 {
-    font-size: 28px;
-  }
+    body {
+      margin:0;
+      background:var(--bg);
+      color:#eee;
+    }
 
-  .issued {
-    font-size: 16px;
-  }
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      height: 60px;
+      display:flex;
+      align-items:center;
+      padding:0 28px;
+      gap:20px;
+      background:#1f1f1f;
+      border-bottom:1px solid var(--border);
+      backdrop-filter: blur(6px);
+    }
 
-  /* HEADER */
-  header {
-    padding: 0 16px;
-    gap: 12px;
-    height: 56px;
-  }
+    .ms-logo {
+      height:28px;
+      width:auto;
+    }
 
-  .learn-text {
-    font-size: 18px;
-    margin-right: 8px;
-  }
+    .learn-text {
+      font-size:22px;
+      font-weight:500;
+      color:#fff;
+      margin-right:24px;
+    }
 
-  nav.top {
-    gap: 14px;
-    font-size: 14px;
-    flex-wrap: wrap; /* allow wrapping */
-  }
+    nav.top {
+      display:flex;
+      gap:26px;
+      font-size:16px;
+    }
 
-  /* PROFILE ROW */
-  .profile-row {
-    flex-direction: row;
-    gap: 14px;
-  }
+    nav.top a {
+      color:#fff;
+      text-decoration:none;
+    }
 
-  .circle-avatar {
-    width: 60px;
-    height: 60px;
-  }
+    /* MAIN PANEL */
+    .panel {
+      width:100%;
+      padding:40px;
+    }
 
-  .profile-name {
-    font-size: 20px;
-  }
+    h1 {
+      font-size:42px;
+      font-weight:700;
+      margin-bottom:16px;
+    }
 
-  /* GRID collapses to 1 column */
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+    .issued {
+      font-size:18px;
+      color:var(--muted);
+      margin-bottom:28px;
+    }
 
-  /* SIDEBAR alignment */
-  .badge-img {
-    width: 130px;
-  }
+    /* PROFILE */
+    .profile-row {
+      display:flex;
+      align-items:center;
+      gap:22px;
+      margin-bottom:30px;
+    }
 
-  .status-pill,
-  .verif-pill {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
+    .circle-avatar {
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      overflow:hidden;
+    }
 
-  .meta-list .row {
-    font-size: 15px;
-  }
+    .circle-avatar img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-  .view {
-    font-size: 15px;
-  }
+    .profile-name {
+      font-size:24px;
+      font-weight:600;
+      color:#b39aff;
+      text-decoration:none;
+    }
 
-  /* SKILLS */
-  .skills h2 {
-    font-size: 22px;
-  }
+    hr {
+      border:0;
+      border-top:1px solid var(--border);
+      margin:30px 0;
+    }
 
-  .skills ul {
-    font-size: 16px;
-  }
+    /* GRID */
+    .grid {
+      display:grid;
+      grid-template-columns: 2fr 1fr;
+      gap:34px;
+      width:100%;
+    }
 
-  /* FOOTER */
-  footer {
-    padding: 28px;
-    font-size: 15px;
-  }
+    .certificate-container img {
+      width:100%;
+      height:auto;
+      object-fit:contain;
+    }
 
-  .footer-links {
-    gap: 14px;
-  }
+    /* SIDEBAR */
+    .badge-img {
+      width:165px;
+      height:auto;
+      margin-bottom:24px;
+    }
 
-  .footer-links a {
-    font-size: 15px;
-  }
-}
+    .status-label {
+      color:var(--muted);
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .status-pill,
+    .verif-pill {
+      padding:7px 14px;
+      border-radius:999px;
+      font-size:14px;
+      margin-right:8px;
+      color:#fff;
+    }
+
+    .status-pill { background:#2e6047; }
+    .verif-pill { background:#17476d; }
+
+    .meta-list {
+      margin-top:20px;
+      padding-top:16px;
+      border-top:1px solid var(--border);
+      font-size:16px;
+    }
+
+    .meta-list .row {
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      color:var(--muted);
+    }
+
+    a.view {
+      display:inline-block;
+      margin-top:20px;
+      color:#b39aff;
+      text-decoration:none;
+      font-size:16px;
+    }
+
+    /* SKILLS SECTION */
+    .skills {
+      margin-top:60px;
+    }
+
+    .skills h2 {
+      font-size:28px;
+      margin-bottom:12px;
+    }
+
+    .skills ul {
+      list-style:none;
+      padding:0;
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top:80px;
+      background:#0d1d2c;
+      padding:40px;
+      color:#d0d9e4;
+      font-size:16px;
+    }
+
+    .footer-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:26px;
+      margin-bottom:18px;
+    }
+
+    footer a {
+      color:#d0d9e4;
+      text-decoration:none;
+    }
+
+    /* --------------------------------------------------
+       MOBILE RESPONSIVE RULES (FULLY FIXED)
+    -------------------------------------------------- */
+    @media (max-width: 768px) {
+
+      .panel { padding: 20px; }
+
+      h1 { font-size: 28px; }
+      .issued { font-size: 16px; }
+
+      /* HEADER */
+      header { padding: 0 16px; gap: 12px; height: 56px; }
+      .learn-text { font-size: 18px; margin-right: 8px; }
+      nav.top { gap: 14px; font-size: 14px; flex-wrap: wrap; }
+
+      /* PROFILE */
+      .profile-row { gap: 14px; }
+      .circle-avatar { width: 60px; height: 60px; }
+      .profile-name { font-size: 20px; }
+
+      /* GRID collapses */
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      /* SIDEBAR */
+      .badge-img { width: 130px; }
+      .status-pill,
+      .verif-pill { font-size: 13px; padding: 6px 12px; }
+      .meta-list .row { font-size: 15px; }
+      .view { font-size: 15px; }
+
+      /* SKILLS */
+      .skills h2 { font-size: 22px; }
+      .skills ul { font-size: 16px; }
+
+      /* FOOTER */
+      footer { padding: 28px; font-size: 15px; }
+      .footer-links { gap: 14px; }
+      .footer-links a { font-size: 15px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <img class="ms-logo" src="logo.png" alt="Microsoft Logo">
+  <div class="learn-text">Learn</div>
+
+  <nav class="top">
+    <a href="https://learn.microsoft.com/en-us/docs/">Documentation</a>
+    <a href="https://learn.microsoft.com/en-us/training/">Training</a>
+    <a href="https://learn.microsoft.com/en-us/answers/questions/ask/">Q&A</a>
+    <a href="https://learn.microsoft.com/en-us/training/organizations">Topics</a>
+  </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="panel">
+
+  <h1>Microsoft Certified: Power BI Data Analyst Associate</h1>
+  <div class="issued">Issued by Microsoft on December 7, 2025 to:</div>
+
+  <div class="profile-row">
+    <div class="circle-avatar">
+      <img src="circle.png" alt="Profile Photo">
+    </div>
+    <a class="profile-name" href="https://learn.microsoft.com/en-us/users/makenamwenda-0181/">
+      Makena Mwenda
+    </a>
+  </div>
+
+  <hr/>
+
+  <div class="grid">
+    <!-- CERTIFICATE -->
+    <div class="certificate-container">
+      <img src="webimage.png" alt="Certificate">
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <img class="badge-img" src="Imageweb.png" alt="Certification Badge">
+
+      <div class="status-label">Status</div>
+      <span class="status-pill">Active</span>
+      <span class="verif-pill">Online Verifiable</span>
+
+      <div class="meta-list">
+        <div class="row">Credential ID: 33807839DECEFB D8F</div>
+        <div class="row">Certification number: 6380B4-C4592C</div>
+        <div class="row">Earned on: December 7, 2025</div>
+        <div class="row">Expires on: December 7, 2026</div>
+      </div>
+
+      <a class="view" href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification">
+        View certification page
+      </a>
+    </aside>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="skills">
+    <h2>Skills measured:</h2>
+    <ul>
+      <li>Prepare the data</li>
+      <li>Model the data</li>
+      <li>Visualize and analyze the data</li>
+      <li>Manage and secure Power BI</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="#">Manage cookies</a>
+    <a href="https://learn.microsoft.com/en-us/principles-for-ai-generated-content">AI Disclaimer</a>
+    <a href="https://learn.microsoft.com/en-us/previous-versions/">Previous Versions</a>
+    <a href="https://techcommunity.microsoft.com/category/skills-hub/blog/skills-hub-blog">Blog</a>
+    <a href="https://learn.microsoft.com/en-us/contribute/">Contribute</a>
+    <a href="https://www.microsoft.com/en-us/privacy/privacystatement">Privacy</a>
+    <a href="https://learn.microsoft.com/en-us/legal/termsofuse">Terms of Use</a>
+    <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks">Trademarks</a>
+  </div>
+
+  <div>© Microsoft 2025</div>
+</footer>
+
+</body>
+</html>
